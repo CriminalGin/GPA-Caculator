@@ -3,8 +3,15 @@ clear;
 
 fprintf('Created by Gin\n')
 fprintf('GPA Caculator for NJU Student\n');
+fprintf('\n');
 fprintf('Just for fun and convenience. Actually it is a very foolish and ugly pro.\n');
-fprintf('You can see the results in the result.txt\n');
+fprintf('\n');
+fprintf('Instrcution:\n');
+fprintf('-->Paste the grades to the GPA.xlsx from A1.\n');
+fprintf('-->Then press the enter bottom, ignore the warning.\n');
+fprintf('-->You can see the results in the result.txt.\n');
+
+
 
 data = xlsread('.\GPA');
 result = fopen('.\result.txt', 'w+');
@@ -15,6 +22,9 @@ gradesColumn = 7;
 units = data(:, unitsColumn);
 grades = data(:, gradesColumn);
 [height, width] = size(data);
+
+if(input(''))
+end
 
 % standard 4.0
 cndGPAs = zeros(height, 1);
