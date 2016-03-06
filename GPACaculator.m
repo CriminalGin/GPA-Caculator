@@ -15,9 +15,7 @@ fprintf('北大4.0：100~90，4.0；89~85，3.7；84~82，3.3；81~78，3.0；77～75，2.7；
 fprintf('加拿大4.3：100~90，4.3；89~85，3.0；84～80，3.7；79～75，3.3；74~70，3.0；69～65，2.7；64～60，2.3；59~0，0\n');
 fprintf('\n');
 fprintf('Instrcution:\n');
-fprintf('-->打开GPA.xlsx,将你从教务系统中导出的成绩复制到GPA.xlsx;\n');
-fprintf('-->删除前两行，删除之后的学分统计、只有成绩和课程的列表;\n');
-fprintf('-->将学分和综合成绩下面的数字属性从文本改成数字;\n');
+fprintf('-->打开GPA.xlsx,将你从教务系统中的成绩复制到GPA.xlsx，从A1开始;\n');
 fprintf('-->然后按回车\n')
 fprintf('-->You can see the results in the result.txt.\n');
 
@@ -60,7 +58,7 @@ end
 cndGPAMultiplyUnit = cndGPAs .* units;
 cndGPA = sum(cndGPAMultiplyUnit) / sum(units);
 
-fprintf(result, 'Standard 4.0 GPA is %8.7f\r\n', cndGPA);
+fprintf(result, '标准4.0： %8.7f\r\n', cndGPA);
 
 % improved 4.0(1)
 cndGPAs = zeros(height, 1);
@@ -79,7 +77,7 @@ end
 cndGPAMultiplyUnit = cndGPAs .* units;
 cndGPA = sum(cndGPAMultiplyUnit) / sum(units);
 
-fprintf(result, 'improved 4.0(1) GPA is %8.7f\r\n', cndGPA);
+fprintf(result, '改进4.0（1）： %8.7f\r\n', cndGPA);
 
 % improved 4.0(2)
 cndGPAs = zeros(height, 1);
@@ -98,7 +96,7 @@ end
 cndGPAMultiplyUnit = cndGPAs .* units;
 cndGPA = sum(cndGPAMultiplyUnit) / sum(units);
 
-fprintf(result, 'improved 4.0(2) GPA is %8.7f\r\n', cndGPA);
+fprintf(result, '改进4.0（2）： %8.7f\r\n', cndGPA);
 
 % PeiKing 4.0
 cndGPAs = zeros(height, 1);
@@ -129,7 +127,7 @@ end
 cndGPAMultiplyUnit = cndGPAs .* units;
 cndGPA = sum(cndGPAMultiplyUnit) / sum(units);
 
-fprintf(result, 'PeiKing GPA is %8.7f\r\n', cndGPA);
+fprintf(result, '北大4.0： %8.7f\r\n', cndGPA);
 
 % Canada 4.3
 cndGPAs = zeros(height, 1);
@@ -156,4 +154,4 @@ end
 cndGPAMultiplyUnit = cndGPAs .* units;
 cndGPA = sum(cndGPAMultiplyUnit) / sum(units);
 
-fprintf(result, 'Canada GPA is %8.7f\r\n', cndGPA);
+fprintf(result, '加拿大4.3： %8.7f\r\n', cndGPA);
